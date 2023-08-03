@@ -3,7 +3,7 @@
 A SwiftUI-based application that showcases user profiles with a tab-based navigation. This project prominently features an **animated sticky header with resizable effects**, mimicking popular social media app designs.
 
 ## Video Demo:
-
+https://github.com/ceciliachenguo/AnimatedStickyProfile/assets/121702916/98c78428-fb67-4767-8810-83974400acb7
 
 ## Tools & Technologies Used:
 
