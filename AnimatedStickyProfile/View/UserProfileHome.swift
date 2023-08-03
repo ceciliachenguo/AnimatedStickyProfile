@@ -14,6 +14,9 @@ struct UserProfileHome: View {
 
     @State private var offsetY: CGFloat = 0
     
+    @State var tabSelection: Int = 0
+
+    
     var body: some View {
         ScrollViewReader { scrollProxy in
             ScrollView(.vertical, showsIndicators: false) {
@@ -21,7 +24,7 @@ struct UserProfileHome: View {
                     HeaderView(user: user, offsetY: offsetY, safeArea: safeArea, size: size)
                         .zIndex(1000)
                     
-                    SampleCardsView()
+                    BottomCollections()
                 }
                 .id("SCROLLVIEW")
                 

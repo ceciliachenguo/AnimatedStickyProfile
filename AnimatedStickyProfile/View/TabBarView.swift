@@ -46,14 +46,15 @@ struct TabBarItem: View {
                     .foregroundColor(currentTab == tab ? .black : .gray)
                 if currentTab == tab {
                     Color(.red)
-                        .frame(width: (UIScreen.main.bounds.width / CGFloat(totalTabs)) * 0.3, height: 3)
+                        .frame(width: (UIScreen.main.bounds.width / CGFloat(totalTabs)) * 0.4, height: 3)
                         .cornerRadius(100)
                         .matchedGeometryEffect(id: "underline", in: namespace, properties: .frame)
                 } else {
-                    Color.clear.frame(height: 3)
+                    Color.clear.frame(width: (UIScreen.main.bounds.width / CGFloat(totalTabs)) * 0.4, height: 3)
                 }
             }
             .animation(.spring(), value: self.currentTab)
+            .frame(width: (UIScreen.main.bounds.width / CGFloat(totalTabs)))
         }
     }
 }
