@@ -15,14 +15,12 @@ struct TabBarView: View {
     
     var body: some View {
         HStack {
-            Spacer()
             ForEach(Array(zip(self.tabBarOptions.indices, self.tabBarOptions)),
                     id: \.0,
                     content: {
                 index, name in
                 TabBarItem(currentTab: self.$currentTab, namespace: namespace.self, tabBarItemName: name, tab: index, totalTabs: tabBarOptions.count)
             })
-            Spacer()
         }
     }
 }

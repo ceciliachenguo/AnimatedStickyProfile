@@ -16,6 +16,9 @@ struct HeaderView: View {
     var body: some View {
         GeometryReader { _ in
             ZStack {
+                Rectangle()
+                    .fill(.black.gradient)
+                
                 AsyncImage(url: URL(string: user.backgroundPicture)) { image in
                     image
                         .resizable()
@@ -24,6 +27,7 @@ struct HeaderView: View {
                     Color.gray
                 }
                 .frame(width: UIScreen.main.bounds.width)
+                .opacity(1 - progress)
                 
                 VStack(spacing: 15) {
                     GeometryReader {
@@ -88,6 +92,6 @@ struct HeaderView: View {
 
 extension HeaderView {
     var minimumHeaderHeight: CGFloat {65 + safeArea.top}
-    var headerHeight: CGFloat {(size.height * 0.25) + safeArea.top}
+    var headerHeight: CGFloat {(size.height * 0.3) + safeArea.top}
     var progress: CGFloat {max(min(-offsetY / (headerHeight - minimumHeaderHeight), 1), 0)}
 }

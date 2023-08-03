@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ColletCollection: View {
     var body: some View {
-        List {
+        VStack(spacing: 15) {
             ForEach(0..<8, id: \.self) { _ in
                 HStack {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
@@ -24,9 +24,8 @@ struct ColletCollection: View {
                         .frame(height: 150)
                 }
             }
-            .listRowSeparator(.hidden)
         }
-        .listStyle(.plain)
+        .padding(15)
     }
 }
 

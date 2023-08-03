@@ -24,10 +24,20 @@ struct UserProfileHome: View {
                     HeaderView(user: user, offsetY: offsetY, safeArea: safeArea, size: size)
                         .zIndex(1000)
                     
-                    BottomCollections()
+                    TabBarView(currentTab: self.$tabSelection, tabBarOptions: ["Posts", "Collects", "Likes & Hist"])
+                        .padding(.leading, -30)
+                        .padding(.top, 15)
+                    
+                    if tabSelection == 0 {
+                        PostsCollection()
+                    } else if tabSelection == 1{
+                        ColletCollection()
+                    } else {
+                        LikesCollection()
+                    }
+                    
                 }
                 .id("SCROLLVIEW")
-                
                 .background {
                     ScrollDetector { offset in
                         offsetY = -offset
